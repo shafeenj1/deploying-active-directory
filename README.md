@@ -41,7 +41,8 @@ Before a client machine can join the domain, the DNS settings must be configured
 <p>
 <img width="1763" height="892" alt="image" src="https://github.com/user-attachments/assets/93b8974a-bcea-445b-9969-0bd3f5894f5b" />
 
-<img src="https://i.imgur.com/N0Mnfoq.png" height="80%" width="80%" alt="Configuration Steps"/>
+<img width="1702" height="924" alt="image" src="https://github.com/user-attachments/assets/39e52225-3069-4b18-97e9-3571e2f2d7b2" />
+
 <img src="https://i.imgur.com/DkPUJNR.png" height="80%" width="80%" alt="Configuration Steps"/>
 </p>
 <p>
