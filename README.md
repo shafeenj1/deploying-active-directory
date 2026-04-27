@@ -65,7 +65,8 @@ Before domain users can access the client computer, Remote Desktop must be enabl
 <br />
 
 <p>
-<img width="2950" height="1570" alt="image" src="https://github.com/user-attachments/assets/f7a60128-155b-4296-9b8b-498cd264899c" />
+<img width="3252" height="1732" alt="image" src="https://github.com/user-attachments/assets/00833c20-947e-420b-9efa-470bb3eb574f" />
+
 <img width="1298" height="740" alt="image" src="https://github.com/user-attachments/assets/078581dc-1574-4957-8a4f-97e3bc219895" />
 
 </p>
