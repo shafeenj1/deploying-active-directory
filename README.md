@@ -20,7 +20,7 @@ This lab builds on the previous exercise in which I installed Active Directory a
 <h2>Setup Steps</h2>
 
 <p>
-<img src="https://i.imgur.com/EFjZrUG.png" height="80%" width="80%" alt="Configuration Steps"/>
+<img width="1702" height="924" alt="image" src="https://github.com/user-attachments/assets/8bb342f2-d626-4a6e-9aea-be89d2432585" />
 <img src="https://i.imgur.com/HSJk3BO.png" height="80%" width="80%" alt="Configuration Steps"/>
 </p>
 <p>
