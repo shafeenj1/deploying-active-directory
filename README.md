@@ -52,7 +52,8 @@ The next step is to join the client virtual machine to the domain. On the client
 <br />
 
 <p>
-<img src="https://i.imgur.com/jmR2LXa.png" height="80%" width="80%" alt="Configuration Steps"/>
+<img width="1749" height="899" alt="image" src="https://github.com/user-attachments/assets/6c3c2abe-3e24-454c-bbdf-3640e93688fc" />
+
 </p>
 <p>
 Before domain users can access the client computer, Remote Desktop must be enabled for non-administrative accounts. While logged in as an administrator (in this case, Jane), open System Properties, navigate to the Remote Desktop tab, and select Users that can remotely access this PC. Add the Domain Users group to grant them Remote Desktop access. With this configuration in place, non-administrative users can now log in to Client-1. In a typical environment, this type of setting would be managed through Group Policy to apply changes across multiple systems. However, for this lab, the configuration is being done manually instead.
