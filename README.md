@@ -43,7 +43,8 @@ Before a client machine can join the domain, the DNS settings must be configured
 
 <img width="1702" height="924" alt="image" src="https://github.com/user-attachments/assets/39e52225-3069-4b18-97e9-3571e2f2d7b2" />
 
-<img src="https://i.imgur.com/DkPUJNR.png" height="80%" width="80%" alt="Configuration Steps"/>
+<img width="1713" height="918" alt="image" src="https://github.com/user-attachments/assets/e2bd8605-ea9b-4bd2-9bec-71779cdf4261" />
+
 </p>
 <p>
 The next step is to join the client virtual machine to the domain. On the client VM, open the System settings, select Rename this PC (advanced), and click Change. Enter the domain name along with the required credentials to complete the domain join process. For this lab, I am using the Jane Doe account. Be sure to enter the login credentials in the proper domain format. Once completed, the client machine should successfully join the domain. On the domain controller, the client will appear under the Computers container in the Active Directory Users and Computers console.
