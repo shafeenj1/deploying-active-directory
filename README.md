@@ -2,29 +2,29 @@
 <img src="https://i.imgur.com/pU5A58S.png" alt="Microsoft Active Directory Logo"/>
 </p>
 
-<h1>Active Directory Configurations in Azure</h1>
-This lab is a follow up to the lab where I installed Active Directory and created a domain controller. I will now be configuring Active Directory and allowing a client to join the domain as well as creating user accounts. <br />
+<h1>Azure Active Directory Setup</h1>
+This lab builds on the previous exercise in which I installed Active Directory and set up a domain controller. In this lab, I will configure Active Directory, join a client machine to the domain, and create user accounts. <br />
 
 <h2>Environments and Technologies Used</h2>
 
-- Microsoft Azure (Virtual Machines/Compute)
-- Remote Desktop
-- Active Directory Domain Services
+- Microsoft Azure
+- Active Directory
 - PowerShell
+- Remote Desktop
 
 <h2>Operating Systems Used </h2>
 
 - Windows Server 2022
-- Windows 10 Pro (21H2)
+- Windows 10 Pro 
 
-<h2>Configuration Steps</h2>
+<h2>Setup Steps</h2>
 
 <p>
 <img src="https://i.imgur.com/EFjZrUG.png" height="80%" width="80%" alt="Configuration Steps"/>
 <img src="https://i.imgur.com/HSJk3BO.png" height="80%" width="80%" alt="Configuration Steps"/>
 </p>
 <p>
-Now that Active Directory is installed on the domain controller VM, it is time to create new Organizational Units and Users. With the Active Directory Users and Computers console open, right click on the domain you created (in my case, ernestotest.com) and make a new Organizational Unit (OU). I have created two Organizational Units, _EMPLOYEES and _ADMINS. The reason behind this naming scheme is because a Powershell script will be utilized later. Within the _ADMINS OU, I created a new User called Jane Doe. Jane's account will be given administrative privileges through the use of a Security Group. To grant admin privileges to a User, right click on the user and open their Properties. Click Member Of then Add to apply the appropraite security group. In this case, I added Jane to the Domain Admins security group. From now on, I will be using Jane's account to make any further changes. I will be logging off as labuser and log in as jane_admin.
+Now that Active Directory has been installed on the domain controller virtual machine, the next step is to create Organizational Units (OUs) and user accounts. Using the Active Directory Users and Computers console, right-click on the domain you created (in this case, ernestotest.com) and create a new Organizational Unit. I created two OUs: _EMPLOYEES and _ADMINS. This naming convention is intentional, as it will be used later in a PowerShell script. Within the _ADMINS OU, I created a new user named Jane Doe. Her account is assigned administrative privileges through a security group. To grant these permissions, right-click the user, open Properties, navigate to the Member Of tab, and add the appropriate security group. In this case, Jane was added to the Domain Admins group. Going forward, all administrative tasks will be performed using Jane’s account. I will log out of the labuser account and sign in as jane_admin.
 </p>
 <br />
 
@@ -32,7 +32,7 @@ Now that Active Directory is installed on the domain controller VM, it is time t
 <img src="https://i.imgur.com/X6UGnsf.png" height="80%" width="80%" alt="Configuration Steps"/>
 </p>
 <p>
-Before the client can join the domain, it is important to configure the DNS settings first. The DNS server has to pointing to the domain controller's private IP address. On the Azure portal, open the Networking tab and click on Network Interface. In the DNS servers, enter the domain controller's private IP address and save the changes. Restart the client VM in order to ensure the DNS changes are saved. 
+Before a client machine can join the domain, the DNS settings must be configured correctly. The DNS server should point to the domain controller’s private IP address. In the Azure portal, navigate to the Networking tab and select the Network Interface. Under the DNS settings, enter the private IP address of the domain controller and save the changes. Finally, restart the client virtual machine to ensure the new DNS configuration is applied.
 </p>
 <br />
 
@@ -42,7 +42,7 @@ Before the client can join the domain, it is important to configure the DNS sett
 <img src="https://i.imgur.com/DkPUJNR.png" height="80%" width="80%" alt="Configuration Steps"/>
 </p>
 <p>
-It is now time to make the client VM join the domain. In the System menu of the client VM, click on Rename this PC (advanced) and Change. Enter the domain and necessary credentials in order to let the client join the domain. I am logging in as Jane Doe for the purposes of the lab. It is important to note that the login credentials have to be input within the context of the domain path. The client should now be part of the domain. On the domain controller, the client should now appear in Computers in the Active Directory Users and Computers panel.
+The next step is to join the client virtual machine to the domain. On the client VM, open the System settings, select Rename this PC (advanced), and click Change. Enter the domain name along with the required credentials to complete the domain join process. For this lab, I am using the Jane Doe account. Be sure to enter the login credentials in the proper domain format. Once completed, the client machine should successfully join the domain. On the domain controller, the client will appear under the Computers container in the Active Directory Users and Computers console.
 </p>
 <br />
 
@@ -50,7 +50,7 @@ It is now time to make the client VM join the domain. In the System menu of the 
 <img src="https://i.imgur.com/jmR2LXa.png" height="80%" width="80%" alt="Configuration Steps"/>
 </p>
 <p>
-Before users in the domain can use the client computer, Remote Desktop has to be enabled for non-administrative users. While logged in as the administrator (in my case, Jane), open System Properties. Click on Remote Desktop and Select users that can remotely access this PC. Allow Domain Users access to Remote Desktop. Non-administrative users can now log in to Client-1. Normally a Group Policy can do the same and allows changes to many systems at once. For the purposes of this lab, a Group Policy won't be used to make this change.
+Before domain users can access the client computer, Remote Desktop must be enabled for non-administrative accounts. While logged in as an administrator (in this case, Jane), open System Properties, navigate to the Remote Desktop tab, and select Users that can remotely access this PC. Add the Domain Users group to grant them Remote Desktop access. With this configuration in place, non-administrative users can now log in to Client-1. In a typical environment, this type of setting would be managed through Group Policy to apply changes across multiple systems. However, for this lab, the configuration is being done manually instead.
 </p>
 <br />
 
