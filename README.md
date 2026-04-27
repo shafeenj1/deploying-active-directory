@@ -78,7 +78,8 @@ User accounts can be created either manually or by using automation. For this la
 <br />
 
 <p>
-<img src="https://i.imgur.com/Xn5tQU2.png" height="80%" width="80%" alt="Configuration Steps"/>
+<img width="1753" height="897" alt="image" src="https://github.com/user-attachments/assets/4e7e90af-d79d-4e6c-9358-098208d3b1de" />
+
 </p>
 <p>
 After the user accounts have been created, Client-1 can now be accessed using one of the newly generated users from the PowerShell script. Select a user and sign in to the client machine using the appropriate domain credentials. In my case, I logged in with shafeentest.com\bon.rovej.
