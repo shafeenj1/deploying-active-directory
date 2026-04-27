@@ -51,6 +51,10 @@ The next step is to join the client virtual machine to the domain. On the client
 </p>
 <p>
 Before domain users can access the client computer, Remote Desktop must be enabled for non-administrative accounts. While logged in as an administrator (in this case, Jane), open System Properties, navigate to the Remote Desktop tab, and select Users that can remotely access this PC. Add the Domain Users group to grant them Remote Desktop access. With this configuration in place, non-administrative users can now log in to Client-1. In a typical environment, this type of setting would be managed through Group Policy to apply changes across multiple systems. However, for this lab, the configuration is being done manually instead.
+
+
+
+  
 </p>
 <br />
 
@@ -59,7 +63,10 @@ Before domain users can access the client computer, Remote Desktop must be enabl
 <img src="https://i.imgur.com/c7LaN48.png" height="80%" width="80%" alt="Configuration Steps"/>
 </p>
 <p>
-Creating users can be done manually or through the use of a script. For this lab, I will be using a PowerShell script. The PowerShell script can be found <a href="https://github.com/AsiaPonder001/BunchofUsers/blob/main/README.md?plain=1)"> here. </a> On the domain controller, open PowerShell ISE as an administrator (and make sure you are logged in with an admin account on the domain controller). Create a new file and paste the script into ISE console. Run the script and observe the accounts being created. 
+
+
+
+User accounts can be created either manually or by using automation. For this lab, I will be using a PowerShell script. The script is available at the provided <a href="https://github.com/AsiaPonder001/BunchofUsers/blob/main/README.md?plain=1)"> GitHub link. </a> The script is available at the provided GitHub link.On the domain controller, open PowerShell ISE with administrative privileges, ensuring you are logged in with a domain administrator account. Create a new file in the ISE, paste the script into the console, and execute it. Once the script runs, you can observe the user accounts being generated automatically.
 </p>
 <br />
 
@@ -67,10 +74,10 @@ Creating users can be done manually or through the use of a script. For this lab
 <img src="https://i.imgur.com/Xn5tQU2.png" height="80%" width="80%" alt="Configuration Steps"/>
 </p>
 <p>
-After creating the users, Client-1 can now be signed in as one of the new users that were created from the PowerShell script. Pick a name and simply sign in to the client with the context of the domain. In my case, it is ernestotest.com\bon.rovej.
+After the user accounts have been created, Client-1 can now be accessed using one of the newly generated users from the PowerShell script. Select a user and sign in to the client machine using the appropriate domain credentials. In my case, I logged in with shafeentest.com\bon.rovej.
 </p>
 <br />
 
 <h2>Lessons Learned</h2>
 
-Doing this lab has made me learn how to set up Active Directory and join clients to the domain. I also created users and assigned the necessary permissions. Active Directory is not difficult to learn despite all the menu navigation that takes place. This lab is a segway for me to learn about DNS settings in-depth and file permissions in action. I will go into detail about these topics in other labs.
+Completing this lab helped me understand how to set up Active Directory and join client machines to a domain. I also gained experience creating user accounts and assigning the appropriate permissions. While navigating the various menus can be a bit involved, Active Directory itself is not overly difficult to learn.This lab also serves as a foundation for exploring DNS configuration in greater detail, as well as understanding file permissions in practice. I plan to cover these topics more thoroughly in future labs.
