@@ -21,7 +21,8 @@ This lab builds on the previous exercise in which I installed Active Directory a
 
 <p>
 <img width="1702" height="924" alt="image" src="https://github.com/user-attachments/assets/8bb342f2-d626-4a6e-9aea-be89d2432585" />
-<img src="https://i.imgur.com/HSJk3BO.png" height="80%" width="80%" alt="Configuration Steps"/>
+<img width="1672" height="941" alt="image" src="https://github.com/user-attachments/assets/f5df4854-ca0e-44bf-9f0c-23b56c2be4f7" />
+
 </p>
 <p>
 Now that Active Directory has been installed on the domain controller virtual machine, the next step is to create Organizational Units (OUs) and user accounts. Using the Active Directory Users and Computers console, right-click on the domain you created (in this case, ernestotest.com) and create a new Organizational Unit. I created two OUs: _EMPLOYEES and _ADMINS. This naming convention is intentional, as it will be used later in a PowerShell script. Within the _ADMINS OU, I created a new user named Jane Doe. Her account is assigned administrative privileges through a security group. To grant these permissions, right-click the user, open Properties, navigate to the Member Of tab, and add the appropriate security group. In this case, Jane was added to the Domain Admins group. Going forward, all administrative tasks will be performed using Jane’s account. I will log out of the labuser account and sign in as jane_admin.
